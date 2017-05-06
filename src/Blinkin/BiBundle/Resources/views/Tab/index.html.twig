@@ -1,0 +1,26 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block ct %}
+    <a href="{{ path('bi_tab_add') }}" class="pure-button">Dodaj nową tabulaturę</a>
+
+    <table class="pure-table">
+        <tr>
+            <th>Dodano</th>
+            <th>Tytuł</th>
+            <th></th>
+        </tr>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.getCreated()|date('Y-m-d') }}</td>
+                <td>
+					<a href="{{ path('bi_tab_item', {tab:item.getId()}) }}">{{ item.getName() }}</a>
+				</td>
+                <td>
+					<a href="{{ path('bi_tab_edit', {itemId:item.id}) }}" class="pure-button">Edytuj</a>
+					<a href="{{ path('bi_tab_delete', {item:item.id}) }}" class="pure-button" onclick="return confirm('Potwierdź usunięcie');">&times;</a>
+				</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

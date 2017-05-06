@@ -1,0 +1,11 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block ct %}
+    
+    <a href="{{ path('bi_user_blog_add') }}" class="pure-button">Dodaj wpis</a>
+    
+    {% for item in blogs %}
+        {% include 'BiBundle:Blog:inc_item.html.twig' with {blog:item} %}
+    {% endfor %}
+            
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "BiBundle:Member:layout.html.twig" %}
+
+{% block ct %}
+	
+	<h1>Blog użytkownika {{ member.username }}</h1>
+
+    {% for item in blogs %}
+        {% include 'BiBundle:Blog:inc_item.html.twig' with { blog:item } %}
+    {% endfor %}
+            
+{% endblock %}

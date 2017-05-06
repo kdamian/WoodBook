@@ -1,0 +1,26 @@
+forum_homepage:
+    path:     /user/forum
+    defaults: { _controller: ForumBundle:Default:index }
+    
+forum_add:
+    path:     /user/forum/add
+    defaults: { _controller: ForumBundle:Add:index }
+
+forum_subject:
+    path:     /user/forum/subject/{id}
+    defaults: { _controller: ForumBundle:Subject:index }
+    requirements:
+        id: \d+ 
+    
+forum_add_answer:
+    path:     /user/forum/subject/{subId}/add_answer
+    defaults: { _controller: ForumBundle:Add:answer }
+    requirements:
+        subId: \d+ 
+        
+forum_edit_answer:
+    path:     /user/forum/subject/{subId}/edit_answer/{ansId}
+    defaults: { _controller: ForumBundle:Add:answer }
+    requirements:
+        subId: \d+ 
+        ansId: \d+

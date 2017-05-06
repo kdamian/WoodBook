@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WoodBook</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="{{ asset('css/reset.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/pure.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('js/jquery/jquery-ui.min.css') }}" />
+
+        {% block stylesheet %}
+
+        {% endblock %}
+
+    </head>
+    <body 
+		data-upload="{{ path('bi_upload') }}"
+		data-upload_path="{{ upload_path }}">
+        <div class="pg">
+            <header>
+                <h1>WoodBook</h1>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bi_user_login') }}">Strona główna</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bi_help') }}">Pomoc</a>
+                        </li>
+                        {% if app.user %}
+                            <li class="session-x">
+                                {% include 'BiBundle:User:inc_session.html.twig' %}
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+
+            </header>
+
+			{% block menu %}
+				{% if app.user %}
+					{% include 'BiBundle:User:inc_menu.html.twig' %}
+				{% endif %}
+			{% endblock %}
+
+			<div class="member">
+                {% block members %}
+
+                {% endblock %}
+            </div>
+			
+            <div class="ct">
+				{% include 'BiBundle:Default:inc_session_messages.html.twig' %}
+                {% block ct %}
+
+                {% endblock %}
+            </div>
+            <footer>
+                &copy; Damian Kołtan 2015
+            </footer>
+        </div>
+        <script src="{{ asset('js/jquery/jquery.js') }}"></script>
+        <script src="{{ asset('js/jquery/jquery-ui.min.js') }}"></script>
+        {% block scripts %}
+
+        {% endblock %}
+    </body>
+</html>

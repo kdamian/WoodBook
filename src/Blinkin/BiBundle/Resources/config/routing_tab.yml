@@ -1,0 +1,25 @@
+bi_tab_index:
+    path:     /
+    defaults: { _controller: BiBundle:Tab:index }
+
+bi_tab_add:
+    path:     /add
+    defaults: { _controller: BiBundle:Tab:edit }
+    
+bi_tab_edit:
+    path:     /edit/{itemId}
+    defaults: { _controller: BiBundle:Tab:edit }
+    requirements:
+        itemId: \d+
+
+bi_tab_delete:
+    path:     /delete/{item}
+    defaults: { _controller: BiBundle:Tab:delete }
+    requirements:
+        item: \d+ 
+        
+bi_tab_item:
+    path:   /in/{tab}
+    defaults: { _controller: BiBundle:Tab:tabItem }
+    requirements:
+        tab: \d+

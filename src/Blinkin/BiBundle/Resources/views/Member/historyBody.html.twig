@@ -1,0 +1,18 @@
+{% extends "BiBundle:Member:layout.html.twig" %}
+
+{% block ct %}
+
+    <table class="pure-table">
+        <tr>
+            <th>Tytuł</th>
+            <th>Opis</th>
+        </tr>
+        {% for item in histories_body %}
+            <tr>
+                <td>{{ item.getName() }}</td>
+                <td>{{ item.getBody() }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

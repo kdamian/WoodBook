@@ -1,0 +1,56 @@
+bi_member_index:
+    path: /
+    defaults: { _controller: BiBundle:Member:index }
+
+bi_member_item:
+    path: /{user}
+    defaults: { _controller: BiBundle:Member:item }
+    requirements:
+        user: \d+
+
+bi_member_blog:
+    path: /blog/{user}
+    defaults: { _controller: BiBundle:Member:blog }
+    requirements:
+        user: \d+
+        
+bi_member_history:
+    path: /history/{user}
+    defaults: { _controller: BiBundle:Member:history }
+    requirements:
+        user: \d+
+        
+bi_member_history_body:
+    path: /history/{user}/description/{id}
+    defaults: { _controller: BiBundle:Member:historyBody }
+    requirements:
+        user: \d+
+
+bi_member_tab:
+    path:   /tab/{user}
+    defaults: { _controller: BiBundle:Member:tab }
+    requirements:
+        user: \d+
+
+bi_member_tab_item:
+    path:   /tab/in/{tab}
+    defaults: { _controller: BiBundle:Member:tabItem }
+    requirements:
+        tab: \d+
+        
+bi_member_friends:
+    path:   /friends
+    defaults: { _controller: BiBundle:Member:friends }
+    requirements:
+
+bi_member_add_friend:
+    path: /friend/{friend}
+    defaults: { _controller: BiBundle:Member:addFriend }
+    requirements:
+        friend: \d+
+
+bi_member_fried_remove:
+    path: /friend/remove/{friend}
+    defaults: { _controller: BiBundle:Member:removeFriend }
+    requirements:
+        friend: \d+

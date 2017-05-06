@@ -1,0 +1,19 @@
+bi_history_index:
+    path:     /
+    defaults: { _controller: BiBundle:History:index }
+
+bi_history_add:
+    path:     /add
+    defaults: { _controller: BiBundle:History:edit }
+    
+bi_history_edit:
+    path:     /edit/{itemId}
+    defaults: { _controller: BiBundle:History:edit }
+    requirements:
+        itemId: \d+
+        
+bi_history_delete:
+    path:     /delete/{item}
+    defaults: { _controller: BiBundle:History:delete }
+    requirements:
+        item: \d+ 

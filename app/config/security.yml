@@ -1,0 +1,44 @@
+    # To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    role_hierarchy:
+        ROLE_USER:				[]
+        ROLE_ADMIN:                             ROLE_USER
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        db_provider:
+            entity:
+                class: BiBundle:User
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        default:
+            anonymous: ~
+            http_basic: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                default_target_path: /user/home
+            logout:
+                path: /user/logout
+                target: /login
+    encoders:
+        Blinkin\BiBundle\Entity\User: md5
+        
+    access_control:
+        - { path: ^/upload-file, roles: ROLE_USER }
+        - { path: ^/user, roles: ROLE_USER }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/activate, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/help, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        
+        
+        
+    access_denied_url: /panel/error/403

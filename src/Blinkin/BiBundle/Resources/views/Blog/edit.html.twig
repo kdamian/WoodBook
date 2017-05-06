@@ -1,0 +1,14 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block scripts %}
+    <script>
+		{# tworzenie skryptu do wyświetlania planszy kalendarza w domyśle, całość do wyboru wyświetla się w 'historii' #}
+        $(function() {
+            $('#history_date_from, #history_date_to').datepicker();
+        });
+    </script>
+{% endblock %}
+
+{% block ct %}
+    {{ form(form, { attr: {class:'pure-form'} }) }}
+{% endblock %}

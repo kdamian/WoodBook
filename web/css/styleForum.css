@@ -1,0 +1,4 @@
+//ukrywanie labeli wyświetlanych przy textarea
+.pure-form label {
+    display: none;
+}

@@ -1,0 +1,5 @@
+services:
+    bi.blog.saver:
+        class: Blinkin\BiBundle\Utils\Blog\Saver
+        arguments:
+            em: "@doctrine.orm.entity_manager"

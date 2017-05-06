@@ -1,0 +1,11 @@
+<a href="{{ path('bi_member_item', {user:item.id}) }}" class="user-thumb">
+	{% if item.img %}
+		<img src="{{ upload_path ~ item.img }}" />
+	{% endif %}
+	
+	{% if item.name %}
+		{{ item.name }}
+	{% else %}
+		{{ item.username }}
+	{% endif %}
+</a>

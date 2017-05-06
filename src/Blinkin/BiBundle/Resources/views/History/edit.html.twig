@@ -1,0 +1,13 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block scripts %}
+	<script>
+        $(function() {
+            $('#history_date_from, #history_date_to').datepicker();
+        });
+    </script>
+{% endblock %}
+
+{% block ct %}
+    {{ form(form, { attr: {class:'pure-form'} }) }}
+{% endblock %}

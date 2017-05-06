@@ -1,0 +1,30 @@
+{% set flashErrors = app.session.flashbag.get('errors') %}
+{% set flashMessages = app.session.flashbag.get('msgs') %}
+
+{% if flashMessages or flashErrors %}
+	<div class="flash-messages">
+		{% for flashError in flashErrors %}
+			<div class="message pure-alert pure-alert-error">
+				<i class="fa fa-exclamation-circle"></i> {{ flashError }}
+				
+			</div>
+		{% endfor %}
+
+		{% for flashMessage in flashMessages %}
+			<div class="message pure-alert">
+				<i class="fa fa-check-circle"></i> {{ flashMessage }}
+				
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}
+
+{% if error|default(false) %}
+	<div class="flash-messages raw-panel-messages">
+		<div class="message pure-alert pure-alert-error">
+			<i class="fa fa-exclamation-circle"></i> 
+			{{ error.messageKey|trans(error.messageData, 'security') }}
+			
+		</div>
+	</div>
+{% endif %}

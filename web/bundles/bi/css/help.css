@@ -1,0 +1,37 @@
+
+/*
+
+---------------------------------Styl zrobiony na potrzeby 'kontaktu z twórcą', działa średnio, korzystam z pure-class------------------------------------------
+
+.help-notice { text-align: center; padding: 10px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 10px; }
+form.help { font-size: 16px; }
+form.help div { clear: left; margin-bottom: 10px; }
+form.help label { float: left; margin-right: 10px; text-align: right; width: 100px; font-weight: bold; vertical-align: top; padding-top: 10px; }
+form.help input[type="text"],
+form.help input[type="email"]
+          { width: 500px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form.help textarea { width: 500px; height: 150px; line-height: 26px; font-size: 20px; }
+form.help input[type="submit"] { margin-left: 110px; width: 508px; line-height: 26px; font-size: 20px; min-height: 26px; }
+form.help ul li { color: #ff0000; margin-bottom: 5px; }
+*/
+
+.help-notice { text-align: center; padding: 10px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 10px; }
+
+form.contact { 
+    text-align: center; 
+    padding: 10px; 
+    background: #DFF2BF; 
+    border: 1px solid; 
+    color: #4F8A10; 
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+//ukrywanie labeli wyświetlanych przy textarea
+.pure-form label {
+    display: none;
+}

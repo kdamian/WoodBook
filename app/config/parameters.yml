@@ -1,0 +1,16 @@
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: test
+    database_user: root
+    database_password: null
+    mailer_transport: smtp
+    mailer_host: poczta.o2.pl
+    mailer_port: 587
+    mailer_user: woodbook
+    mailer_password: LivHadiru21
+    secret: 54354v24f43f43243f
+    upload_dir: upload/
+    public_dir: web/
+    upload_path: "/test/%public_dir%/%upload_dir%/"
+    

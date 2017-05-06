@@ -1,0 +1,17 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{#% block member %}
+
+	Profil użytkownik {{ member.username }}
+	
+{% endblock %#}
+
+{% block ct %}
+
+	<h1>Tabulatura:	{{ tab.getName() }}</h1>
+
+	<pre>
+		{{ contents }}
+	</pre>
+
+{% endblock %}

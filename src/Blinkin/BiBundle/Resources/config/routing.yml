@@ -1,0 +1,91 @@
+bi_default_index:
+    path:     /hello/{name}
+    defaults: { _controller: BiBundle:Default:index }
+    requirements:
+        name: \w+ 
+        
+bi_home:
+    path:	/
+    defaults: { _controller: BiBundle:User:login }
+
+bi_upload:
+    pattern:  /upload-file
+    defaults: { _controller: BiBundle:Default:upload }
+
+bi_user_login:
+    path:   /login
+    defaults: { _controller: BiBundle:User:login }
+    
+bi_login_check:
+    path: /login_check
+    defaults: { _controller: BiBundle:User:loginCheck }
+    
+bi_user_logout:
+    path: /user/logout
+    defaults: { _controller: BiBundle:User:logout }
+
+bi_user_home:
+    path:   /user/home
+    defaults: { _controller: BiBundle:User:home }
+    
+bi_user_register:
+    path:   /register
+    defaults: { _controller: BiBundle:User:register }
+
+bi_user_activate:
+    path:   /activate
+    defaults: { _controller: BiBundle:User:activate }
+    
+bi_user_logout:
+    pattern:   /user/logout
+    
+bi_help:
+    path: /help
+    defaults: { _controller: BiBundle:Help:index }
+    requirements:
+        _method:  GET|POST
+        
+bi_user_delete:
+    path:   /delete
+    defaults: { _controller: BiBundle:User:delete }
+    
+#    
+#bi_user_tab:
+#    path: /user/tab
+#    defaults: { _controller: BiBundle:Home:tab }
+
+# history
+_bi_history:
+    resource: "@BiBundle/Resources/config/routing_history.yml"
+    prefix:   /user/history
+    
+# tab
+_bi_tab:
+    resource: "@BiBundle/Resources/config/routing_tab.yml"
+    prefix:   /user/tab
+    
+# blog    
+bi_user_blog:
+    pattern:  /user/blog
+    defaults: { _controller: BiBundle:Blog:index }
+
+bi_user_blog_add:
+    pattern:  /user/blog/add
+    defaults: { _controller: BiBundle:Blog:edit }
+    
+bi_user_blog_edit:
+    pattern:  /user/blog/edit/{blog}
+    defaults: { _controller: BiBundle:Blog:edit }
+    requirements:
+        blog: \d+
+        
+bi_user_blog_delete:
+    path:     /user/blog/delete/{item}
+    defaults: { _controller: BiBundle:Blog:delete }
+    requirements:
+        item: \d+ 
+ 
+# member
+_bi_member:
+    resource: "@BiBundle/Resources/config/routing_member.yml"
+    prefix:   /user/member

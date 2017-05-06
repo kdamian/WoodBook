@@ -1,0 +1,13 @@
+
+<span class="thumb-x">
+	<a href="{{ path('bi_user_home') }}">
+		{% if app.user.img|default(false) %}
+			<img src="{{ upload_path ~ app.user.img }}" />
+		{% endif %}
+		<br />
+		{{ app.user.username }}
+	</a>
+</span>
+<a href="{{ path('bi_user_logout') }}" class="logout-link">Wyloguj mnie</a>
+
+

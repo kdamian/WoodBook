@@ -1,0 +1,20 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block ct %}
+
+	<table class="pure-table">
+	{% for friend in friends %}
+		<tr>
+			<td>
+				{% include 'BiBundle:User:inc_thumb.html.twig' with {item:friend}%}	
+			</td>
+			<td>
+				<a href="{{ path('bi_member_fried_remove', {friend:friend.getId()}) }}">&times;</a>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+	
+
+{% endblock %}
+

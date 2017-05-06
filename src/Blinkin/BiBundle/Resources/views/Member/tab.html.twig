@@ -1,0 +1,20 @@
+{% extends "BiBundle:Member:layout.html.twig" %}
+
+{% block ct %}
+ 
+    <table class="pure-table">
+        <tr>
+            <th>Dodano</th>
+            <th>Tytuł</th>
+        </tr>
+        {% for item in tabs %}
+            <tr>
+                <td>{{ item.getCreated()|date('Y-m-d') }}</td>
+                <td>
+					<a href="{{ path('bi_member_tab_item', {tab:item.getId()}) }}">{{ item.getName() }}</a>
+				</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

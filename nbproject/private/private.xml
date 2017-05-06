@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <coverage xmlns="http://www.netbeans.org/ns/code-coverage/1" enabled="false"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/opt/lampp/htdocs/test/src/ForumBundle/Controller/SubjectController.php</file>
+            <file>file:/opt/lampp/htdocs/test/src/ForumBundle/Entity/Answer.php</file>
+            <file>file:/opt/lampp/htdocs/test/src/Blinkin/BiBundle/Resources/views/User/inc_thumb.html.twig</file>
+            <file>file:/opt/lampp/htdocs/test/src/ForumBundle/Resources/views/Forum/add.html.twig</file>
+            <file>file:/opt/lampp/htdocs/test/src/ForumBundle/Resources/views/Forum/subject.html.twig</file>
+            <file>file:/opt/lampp/htdocs/test/src/Blinkin/BiBundle/Controller/BlogController.php</file>
+        </group>
+    </open-files>
+</project-private>

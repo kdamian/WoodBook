@@ -1,0 +1,7 @@
+forum:
+    resource: "@ForumBundle/Resources/config/routing.yml"
+    prefix:   /
+
+bi:
+    resource: "@BiBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,0 +1,25 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('js/uploadi5/uploadifive.css') }}" />
+	<style>
+		#user_img {
+			display: none;
+		}
+		
+		.user-img {
+			width: 120px;
+			display: block;	
+		}
+	</style>
+{% endblock %}
+
+
+{% block scripts %}
+	<script src="{{ asset('js/uploadi5/uploadifive.js') }}"></script>
+	<script src="{{ asset('js/TabEdit.js') }}"></script>
+{% endblock %}
+
+{% block ct %}
+    {{ form(form, { attr: {class:'pure-form'} }) }}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block menu %}
+	
+<div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="{{ path('forum_homepage') }}" class="pure-menu-link">Forum</a></li>
+        <li class="pure-menu-item"><a href="{{ path('bi_member_blog', {user:member.id}) }}" class="pure-menu-link">Blog</a></li>
+        <li class="pure-menu-item"><a href="{{ path('bi_member_history', {user:member.id}) }}" class="pure-menu-link">Historia</a></li>
+        <li class="pure-menu-item"><a href="{{ path('bi_member_tab', {user:member.id}) }}" class="pure-menu-link">Tabulatury</a></li>
+        <li class="pure-menu-item"><a href="{{ path('bi_member_index') }}" class="pure-menu-link">Użytkownicy</a></li>
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block members %}
+
+	Profil użytkownika {{ member.username }}
+
+{% endblock %}
+
+{% block ct %}
+	
+	
+{% endblock %}

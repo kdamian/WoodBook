@@ -1,0 +1,48 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block ct %}
+
+	Temat<h2>{{ sub.subject }}</h2>
+	{#% for item in items %}
+	Temat<h2>{{ item.subject.getSubject() }}</h2>
+	{% endfor %#}
+	</br>
+
+    <table class="pure-table pure-table-horizontal">
+        <thead>
+            <tr>
+                <th>{{ sub.user.username }}
+					<img src="{{ upload_path ~ sub.user.img }}" class="forum-thumb" />
+				</th>
+                <th>{{ sub.body|nl2br }}</th>
+				<th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+			{% for item in items %}
+				<tr>
+					{% if sub.id == item.subject.getId() %}
+
+						<td>
+							{{ item.user.username }}
+							{% if item.user.img %}
+								<img src="{{ upload_path ~ item.user.img }}" class="forum-thumb" />
+							{% endif %}
+						</td>
+
+						<td>{{ item.body|nl2br }}</td>
+						<td>
+							{% if item.getUser().id == user %}
+								<a href="{{ path('forum_edit_answer', {ansId:item.id, subId:sub.id}) }}" class="pure-button">Edytuj</a>
+							{% endif %}
+						</td>
+					{% endif %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('forum_add_answer', {subId:sub.id})}}" class="pure-button">Dodaj post</a>
+
+{% endblock %}

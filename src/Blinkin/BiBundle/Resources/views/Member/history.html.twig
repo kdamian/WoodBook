@@ -1,0 +1,26 @@
+{% extends "BiBundle:Member:layout.html.twig" %}
+
+{% block ct %}
+
+	<h1>Poznaj historię użytkownika {{ member.username }}</h1>
+
+    <table class="pure-table">
+        <tr>
+            <th>Od</th>
+            <th>Do</th>
+            <th>Tytuł</th>
+			<th></th>
+        </tr>
+        {% for item in histories %}
+            <tr>
+                <td>{{ item.getDateFrom() }}</td>
+                <td>{{ item.getDateTo() }}</td>
+                <td>{{ item.getName() }}</td>
+				<td>
+					<a href="{{ path('bi_member_history_body', {user:member.id, id:item.getId()}) }}" class="pure-button">Zobacz</a>
+				</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

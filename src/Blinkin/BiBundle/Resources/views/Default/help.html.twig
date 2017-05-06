@@ -1,0 +1,53 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block ct %}
+
+    {#<h1>
+        Jesli szukasz pomocy, napisz do mnie ze swoim zapytaniem:
+        <a href="meilto:damian.koltan@gamil.com">damian.koltan@gmail.com</a>
+    </h1>#}
+
+    {#% if app.session.hasFlash('help-notice') %}
+        <div class="help-notice">
+            {{ app.session.flash('help-notice') }}
+        </div>
+    {% endif %#}
+
+    {% block stylesheet %}
+
+        {{ parent() }}
+        <link href="{{ asset('bundles/bi/css/help.css') }}" type="text/css" rel="stylesheet" />
+
+    {% endblock %}
+
+
+    <form class="contact">
+        <h1>W razie problemu możesz napisać do twórcy</h1>
+    </form>
+
+    <form action="{{ path('bi_help') }}" method="post" {{ form_enctype(form) }} class="pure-form"> 
+        {# {{ form_enctype(form) }} <- uzywane gdy chcemy ladowac pliki #}
+
+        <fieldset class="pure-group">
+
+            {{ form_errors(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.email) }}
+
+        </fieldset>
+
+        <fieldset class="pure-group">
+
+            {{ form_row(form.subject) }}
+            {{ form_row(form.body) }}
+
+            {{ form_rest(form) }}
+
+            <input type="submit" value="Wyslij" class="pure-button pure-input-1-2 pure-button-primary">
+
+
+        </fieldset>    
+    </form>
+
+{% endblock %}

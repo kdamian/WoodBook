@@ -1,0 +1,23 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block ct %}
+
+    <h1>Porozmawiaj z ludźmi na forum</h1>
+
+    <table class="pure-table">
+        <tr>
+            <th>Temat</th>
+            <th>Napisz na forum</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.getSubject() }}</td>
+            <td><a href="{{ path('forum_subject', {id:item.id})}}" class="pure-button">Otwórz</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="{{ path('forum_add')}}" class="pure-button">Dodaj temat</a>
+    
+{% endblock %}
+

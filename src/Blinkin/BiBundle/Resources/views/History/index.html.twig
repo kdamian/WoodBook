@@ -1,0 +1,26 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block ct %}
+    <a href="{{ path('bi_history_add') }}" class="pure-button">Dodaj nowy wpis</a>
+
+    <table class="pure-table">
+        <tr>
+            <th>Od</th>
+            <th>Do</th>
+            <th>Tytuł</th>
+            <th></th>
+        </tr>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.getDateFrom() }}</td>
+                <td>{{ item.getDateTo() }}</td>
+                <td>{{ item.getName() }}</td>
+                <td>
+					<a href="{{ path('bi_history_edit', {itemId:item.id}) }}" class="pure-button">Edytuj</a>
+					<a href="{{ path('bi_history_delete', {item:item.getId()}) }}" class="pure-button" onclick="return confirm('Potwierdź usunięcie');">&times;</a>
+				</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

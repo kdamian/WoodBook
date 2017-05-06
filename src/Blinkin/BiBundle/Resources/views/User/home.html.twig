@@ -1,0 +1,57 @@
+{% extends "BiBundle::page.html.twig" %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="{{ asset('js/uploadi5/uploadifive.css') }}" />
+	<style>
+		#user_img {
+			display: none;
+		}
+		
+		.user-img {
+			width: 120px;
+			display: block;	
+		}
+	</style>
+{% endblock %}
+
+
+{% block scripts %}
+	<script src="{{ asset('js/uploadi5/uploadifive.js') }}"></script>
+	<script src="{{ asset('js/UserHome.js') }}"></script>
+{% endblock %}
+
+{% block ct %}
+
+    <h2>To Twoja strona domowa {{ app.user.username }}</h2><br>
+	
+	
+	
+    <table class="pure-table">
+        <tr>
+            <td>
+                login:
+            </td>
+            <td>
+                {{ app.user.username }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                email:
+            </td>
+            <td>
+                <a href="mailto:{{ app.user.email }}">{{ app.user.email }}</a>
+            </td>
+        </tr>
+
+		<tr>
+            <td>
+                
+            </td>
+            <td>
+                <a href="{{ path('bi_user_delete')}}" onclick="return confirm('Potwierdź usunięcie konta');">Usuń konto</a>
+            </td>
+        </tr>
+    </table>
+{{ form(user_form, {attr: {class:'pure-form'} }) }}	
+{% endblock %}

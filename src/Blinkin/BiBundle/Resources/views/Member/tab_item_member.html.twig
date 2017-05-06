@@ -1,0 +1,12 @@
+{#% extends "BiBundle::page.html.twig" %#}
+{% extends "BiBundle:Member:layout.html.twig" %}
+
+{% block ct %}
+	
+	<h1>Tabulatura:	{{ tab.getName() }}</h1>
+
+	<pre>
+		{{ contents }}
+	</pre>
+
+{% endblock %}
